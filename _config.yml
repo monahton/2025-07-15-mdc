@@ -110,8 +110,8 @@ workshop_site: "https://carpentries.github.io/workshop-template"
 cc_by_human: "https://creativecommons.org/licenses/by/4.0/"
 
 # Surveys.
-pre_survey: "https://carpentries.typeform.com/to/wi32rS?slug=2023-12-05-unipv&typeform-source=monahton.github.io"
-post_survey: "https://carpentries.typeform.com/to/UgVdRQ?slug=2023-12-05-mdc&typeform-source=monahton.github.io"
+pre_survey: "https://forms.gle/ZMe8x6hnBnoUs9Xy8"
+post_survey: "https://survey.mdc-berlin.de/875143?lang=en"
 
 # Start time in minutes (0 to be clock-independent, 540 to show a start at 09:00 am).
 start_time: 0
