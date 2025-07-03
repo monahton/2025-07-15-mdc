@@ -1,37 +1,85 @@
-{% assign curricula = "swc-gapminder|swc-inflammation"  | split: "|" %}
-{% unless curricula contains site.curriculum %}
-{% include warning-curriculum.html %}
-{% endunless %}
+{% comment %}
+Astronomy workshops
+{% endcomment %}
 
-{% include install_instructions/shell.html %}
 
-<br/>
-<div class="alert alert-warning">
-  <h4>Note for Windows Users</h4>
-  <ul>
-    <li>If you have used <strong>Windows Subsystem for Linux ("WSL2")</strong> please open your Ubuntu bash terminal and follow the <strong>Linux</strong> instructions for each of the software packages below.</li>
-    <li>If not, please follow the <strong>Windows</strong> instructions.</li>
-  </ul>
-</div>
+{% if site.curriculum == "dc-astronomy" %}
 
-{% include install_instructions/git.html %}
+<p>
+  The setup instructions for the Data Carpentry Astronomy workshops
+  can be found at <a href="https://datacarpentry.org/astronomy-python/index.html#setup">
+    the curriculum site</a>.
+</p>
+
+{% comment %}
+Ecology workshops
+{% endcomment %}
+
+
+{% elsif site.curriculum == "dc-ecology" %}
 
 {% if site.flavor == "r" %}
-{% include install_instructions/r.html %}
+<p>
+  The setup instructions for the Data Carpentry Ecology workshops (with R)
+  can be found at <a href="https://datacarpentry.org/ecology-workshop/setup-r-workshop.html">
+    the workshop overview site</a>.
+</p>
+
 {% elsif site.flavor == "python" %}
-{% include install_instructions/python.html %}
-{% elsif site.flavor == "FIXME" %}
-{% include install_instructions/r.html %}
-{% include install_instructions/python.html %}
+<p>
+  The setup instructions for the Data Carpentry Ecology workshops (with Python)
+  can be found at <a href="https://datacarpentry.org/ecology-workshop/setup-python-workshop.html">
+    the workshop overview site</a>.
+</p>
 {% else %}
 {% include warning-flavor.html %}
 {% endif %}
 
 {% comment %}
-The following setup instructions are commented out because Carpentries workshops
-cover the these topics less frequently. Please uncomment the lines that
-correspond to the topics covered in your workshop.
-
-{% include install_instructions/sql.html %}
-{% include install_instructions/openrefine.html %}
+Genomics workshops
 {% endcomment %}
+
+{% elsif site.curriculum == "dc-genomics" %}
+<p>The setup instructions for the Data Carpentry Genomics workshops can be found at <a href="https://datacarpentry.org/genomics-workshop/index.html#setup">the workshop overview site</a></p>.
+
+{% comment %}
+Geospatial workshops
+{% endcomment %}
+
+{% elsif site.curriculum == "dc-geospatial" %}
+<p>The setup instructions for the Data Carpentry Geospatial workshop can be found at <a href="https://datacarpentry.org/geospatial-workshop/index.html#setup">the workshop overview site</a>.</p>
+
+{% comment %}
+Image workshops
+{% endcomment %}
+
+{% elsif site.curriculum == "dc-image" %}
+
+<p>The setup instructions for Data Carpentry Image Processing workshops can be found at <a href="https://datacarpentry.org/image-processing/index.html#setup">the curriculum site</a>.</p>
+
+{% comment %}
+Social sciences workshops
+{% endcomment %}
+
+{% elsif site.curriculum == "dc-socsci" %}
+
+{% if site.flavor == "r" %}
+<p>
+  The setup instructions for the Data Carpentry Social Sciences
+  workshops (with R) can be found at <a href="https://datacarpentry.org/socialsci-workshop/setup-r-workshop.html">
+    the workshop overview site</a>.
+</p>
+
+{% elsif site.flavor == "python" %}
+<p>
+  The setup instructions for the Data Carpentry Social Sciences workshops (with Python)
+  can be found at <a href="https://datacarpentry.org/socialsci-workshop/setup-python-workshop.html">
+    the workshop overview site</a>.
+</p>
+{% else %}
+{% include warning-flavor.html %}
+{% endif %}
+
+{% else %}
+{% include warning-curriculum.html %}
+{% endif %}
